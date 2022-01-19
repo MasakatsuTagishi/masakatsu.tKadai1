@@ -13,6 +13,7 @@
 		077CE3912797DADB002A075C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077CE38F2797DADB002A075C /* Main.storyboard */; };
 		077CE3932797DADC002A075C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 077CE3922797DADC002A075C /* Assets.xcassets */; };
 		077CE3962797DADC002A075C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 077CE3942797DADC002A075C /* LaunchScreen.storyboard */; };
+		C90711F0C979C5EEC7D38EE1 /* Pods_Kadai1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 51DA95C07588595596E8A923 /* Pods_Kadai1.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		077CE3922797DADC002A075C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		077CE3952797DADC002A075C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		077CE3972797DADC002A075C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		41E5DD8AAF770AB717277A7F /* Pods-Kadai1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai1.release.xcconfig"; path = "Target Support Files/Pods-Kadai1/Pods-Kadai1.release.xcconfig"; sourceTree = "<group>"; };
+		51DA95C07588595596E8A923 /* Pods_Kadai1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Kadai1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E822AED2B002774296CECDBD /* Pods-Kadai1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Kadai1.debug.xcconfig"; path = "Target Support Files/Pods-Kadai1/Pods-Kadai1.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C90711F0C979C5EEC7D38EE1 /* Pods_Kadai1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +47,8 @@
 			children = (
 				077CE3882797DADB002A075C /* Kadai1 */,
 				077CE3872797DADB002A075C /* Products */,
+				46EBBF1B9E680FFF43D0DE42 /* Pods */,
+				837A9C94F339F7BB62E15CBF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -67,6 +74,23 @@
 			path = Kadai1;
 			sourceTree = "<group>";
 		};
+		46EBBF1B9E680FFF43D0DE42 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E822AED2B002774296CECDBD /* Pods-Kadai1.debug.xcconfig */,
+				41E5DD8AAF770AB717277A7F /* Pods-Kadai1.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		837A9C94F339F7BB62E15CBF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				51DA95C07588595596E8A923 /* Pods_Kadai1.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +98,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 077CE39A2797DADC002A075C /* Build configuration list for PBXNativeTarget "Kadai1" */;
 			buildPhases = (
+				C242BD25143C725C2C065E4C /* [CP] Check Pods Manifest.lock */,
 				077CE3822797DADB002A075C /* Sources */,
 				077CE3832797DADB002A075C /* Frameworks */,
 				077CE3842797DADB002A075C /* Resources */,
+				077CE39D2797E29D002A075C /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -132,6 +158,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		077CE39D2797E29D002A075C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which \"${PODS_ROOT}/SwiftLint/swiftlint\" >/dev/null; then\n${PODS_ROOT}/SwiftLint/swiftlint\nelse\necho \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+		C242BD25143C725C2C065E4C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Kadai1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		077CE3822797DADB002A075C /* Sources */ = {
@@ -284,6 +352,7 @@
 		};
 		077CE39B2797DADC002A075C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E822AED2B002774296CECDBD /* Pods-Kadai1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -314,6 +383,7 @@
 		};
 		077CE39C2797DADC002A075C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 41E5DD8AAF770AB717277A7F /* Pods-Kadai1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
