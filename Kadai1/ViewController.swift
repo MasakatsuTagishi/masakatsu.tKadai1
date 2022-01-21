@@ -8,18 +8,16 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
     @IBOutlet private weak var textField1: UITextField!
     @IBOutlet private weak var textField2: UITextField!
     @IBOutlet private weak var textField3: UITextField!
     @IBOutlet private weak var textFieid4: UITextField!
     @IBOutlet private weak var textField5: UITextField!
     @IBOutlet private weak var totalLabel: UILabel!
-    
     @IBAction private func pressButton(_ sender: UIButton) {
         totalLabel.text = String(calculate())
     }
-    
+
     private func calculate() -> Int {
         let num1 = textField1.textToInt
         let num2 = textField2.textToInt
@@ -33,9 +31,7 @@ class ViewController: UIViewController {
 extension UITextField {
     var textToInt: Int {
         let text = self.text
-        let int = text
-            .flatMap{Int($0)} ?? 0
+        let int = text.flatMap {Int($0)} ?? 0
         return int
     }
 }
-
